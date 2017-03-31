@@ -64,7 +64,7 @@ local function check_member_super(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = msg.to.id
       save_data(_config.moderation.data, data)
-	  local text = '🔹گروه با موفقيت اضافه شد(ژوپيتر2.0)🔹'
+	  local text = '<i>🔹گروه با موفقيت اضافه شد🔹</i>'
       return reply_msg(msg.id, text, ok_cb, false)
     end
   end
@@ -88,7 +88,7 @@ local function check_member_superrem(cb_extra, success, result)
       end
       data[tostring(groups)][tostring(msg.to.id)] = nil
       save_data(_config.moderation.data, data)
-	  local text = '🔸گروه با موفقيت حذف شد(ژوپيتر2.0)🔸'
+	  local text = '<i>🔸گروه با موفقيت حذف شد🔸</i>'
       return reply_msg(msg.id, text, ok_cb, false)
     end
   end
@@ -129,8 +129,8 @@ end
 
 --Get and output info about supergroup
 local function callback_info(cb_extra, success, result)
-local title ="🔰مشخصات سوپر گروه: ["..result.title.."]\n\n"
-local admin_num = "🌟تعداد ادمین ها: "..result.admins_count.."\n"
+local title ="<i>مشخصات سوپر گروه</i>: ["..result.title.."]\n\n"
+local admin_num = "<i>تعداد ادمین ها:</i> "..result.admins_count.."\n"
 local user_num = "☑️تعداد کاربرا: "..result.participants_count.."\n"
 local kicked_num = "❌تعداد اخراجیا: "..result.kicked_count.."\n"
 local channel_id = "🆔ایدی: "..result.peer_id.."\n"
